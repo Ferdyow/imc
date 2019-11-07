@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 + Copyright (C) 2007-2018 Laboratório de Sistemas e Tecnologia Subaquática   +
@@ -10768,4 +10768,33 @@
     </field>
    </message>
   
+  
+  <message id = "2001" name = "Estimated MUG State" abbrev ="EstimatedMugState" source="vehicle" flags = "periodic">
+    <description>
+     This message presents the estimated position of a MUG as well as the MUGs ID if this has been detected.
+     
+     The Position is given by a North-East-Down (NED)
+      local tangent plane displacement (x, y, z) relative to
+      an absolute WGS-84 coordinate (latitude, longitude,
+      height above ellipsoid).  The z-coordinate is left out as this is assumed to be zero.
+    </description>
+    <field name="MUG Identification" abbrev="id" type = "int32_t">
+      <description>
+         The ID which uniquely determines which MUG has been located.
+      </description>
+    </field>
+    <field name="Offset north" abbrev="x" type="fp32_t" unit="m">
+      <description>
+        The North offset of the North/East/Down field with respect to
+        LLH.
+      </description>
+    </field>
+    <field name="Offset east" abbrev="y" type="fp32_t" unit="m">
+      <description>
+        The East offset of the North/East/Down field with respect to
+        LLH.
+      </description>
+    </field>
+    </message>
+    
 </messages>
